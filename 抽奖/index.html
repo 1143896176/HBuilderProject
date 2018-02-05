@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title></title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.warp {
+				width: 100%;
+				height: 100%;
+				background: url('img/BG2@3x.png') no-repeat center;
+				background-size: 100%;
+				position: relative;
+			}
+			
+			.warp .people {
+				width: 65%;
+				min-width: 246px;
+				height: 55%;
+				min-height: 266px;
+				background: url('img/财神@2x.png') no-repeat center;
+				background-size: contain;
+				z-index: 1;
+			}
+			
+			.warp .taijie {
+				width: 100%;
+				height:13% ;
+				min-height: 66px;
+				background: #c7000b;
+				border-radius: 10px;
+			}
+			.tel{ 
+				width: 72%;
+				min-width: 273px;
+				height: 1%;
+				min-height:44px ;
+				background: #FFFFFF;
+                box-shadow: 0 2px 4px 0 rgba(153,153,153,0.50);
+                 border-radius: 5px;
+			}
+			img{
+				width: 100px;
+				height:100px;
+				position: absolute;
+				top:0;
+				left: 0;
+			}
+		</style>
+		<style>
+			.end{
+				width: 100%;
+				height: 100%;
+				background: rgba(0 ,0, 0 ,0.1);
+				position: relative;
+				display: none;
+			}
+			.end-img{
+				width: 80%;
+				height:50%;
+				margin: 0 auto;
+				background: url('img/bg3.png') no-repeat center;
+				background-size:contain ;
+				position:absolute;
+			}
+			.end .end-img p{
+				width: 100%;
+				display: block;
+				position: absolute;
+				height: 21px;
+				line-height: 21px;
+				font-size:15px ;	
+				color:#F8E71C ;	
+				text-align: center;	
+				padding: 10px 0;
+				font-family: PingFangSC-Regular;	
+			}
+			.end .end-img .name{
+				height: 28px;
+				line-height: 28px;
+				font-size:20px ;	
+			}
+			.end .end-img .tele{
+				text-align: center;	
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="warp">
+			<div class="tel"></div>
+			<div  class="people">
+               <img alt="红包" src="img/红包.png"/ >
+			</div>
+			<div class="taijie">
+
+			</div>
+		</div>
+		<audio src="adiu/001_A.mp3" autoplay="autoplay" loop="loop"></audio>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				mo();
+				function mo(){
+					var win_w = $(window).width();
+					var win_h = $(window).height();
+					
+					var  end_w=$(".end-img").width();
+					var  end_h=$(".end-img").height();
+					
+					var  input_w=$(".name").width();
+					
+					var  left=(win_w-end_w)/2;
+					var  top=(win_h-end_h)/2;
+					
+					var left_input=(end_w-input_w)/2;
+					var top_input=end_h*0.5;
+					
+					$(".end-img").css({
+						left:left+"px",
+						top:top+"px"
+					});
+					$(".name").css({
+						left:left_input+"px",
+						top:top+"px"
+					});
+					$(".tele").css({
+						left:left_input+"px",
+						top:top+28+"px"
+					});
+				}
+				positionInit();
+
+				function positionInit() {
+					var red_bag_h = $(".people").height();
+					var red_bag_w = $(".people").width();
+					
+					var tel_w=$(".tel").width();
+
+					var win_w = $(window).width();
+					var win_h = $(window).height();
+
+					var left = (win_w - red_bag_w) / 2;
+					var top = win_h * 0.37;
+					
+					var tel_left=(win_w-tel_w)/2;
+
+					$(".warp .people").css({
+						position: "absolute",
+						left: left + "px",
+						top: top *0.75+ "px"
+					});
+					$(".warp .taijie").css({
+						position: "absolute",
+						top: top * 1.9+ "px"
+					});
+					$(".warp .tel").css({
+						position: "absolute",
+						top: top * 0.57+ "px",
+						left:tel_left+"px"
+					});
+					
+				}
+				setTimeout(function(){
+					$(".end").css({
+						position:"absoult",
+						display:"block",
+					})
+				},3000)
+				$(window).resize(function() {
+					positionInit();
+					mo();
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

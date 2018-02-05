@@ -1,0 +1,22 @@
+.menu{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	overflow: hidden;
+	margin-bottom: 3px;
+}
+.menu li{
+	height: 80px;
+	min-width: 25%;
+	
+	max-width: 30%;
+	list-style: none;
+	text-align: center;
+	line-height: 80px;
+	font-size: 38px;
+	font-family: "微软雅黑";
+	margin: 0 3%;
+	color: #888;
+	
+	border-bottom: 3px solid #e24242;
+}

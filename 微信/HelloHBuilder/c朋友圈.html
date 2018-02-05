@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+				font-family: "微软雅黑";
+			}
+			
+			.di {
+				/*border: 1px solid red;*/
+				min-width: 250px;
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
+				/*position: relative;*/
+				/*justify-content:space-around;*/
+				display: flex;
+				flex-flow: column nowrap;
+				flex-flow: column nowrap;
+				justify-content: flex-end;
+				position: fixed;
+				top: 0px;
+				/*overflow: scroll;*/
+			}
+			
+			.pingmu {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 40px;
+				/*position:fixed;
+			top:40px;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				background-color: #404040;
+				color: whitesmoke;
+				font-weight: 100;
+			}
+			
+			.dianchi {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 40px;
+				/*position:fixed;
+			top:0px;*/
+				display: flex;
+				flex-flow: row nowrap;
+				background: #1a1a1a;
+				justify-content: space-between;
+			}
+			
+			.right {
+				width: 200px;
+				/*border:1px whitesmoke solid;*/
+				background: url(img/weixintu/dianchi.PNG);
+				height: 40px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.left {
+				width: 100px;
+				/*border:1px whitesmoke solid;*/
+				background: url(img/weixintu/捕.PNG);
+				height: 40px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.sosuo {
+				width: 50px;
+				height: 30px;
+				background: url(img/箭头白.PNG);
+				background-size: 30px;
+				background-repeat: no-repeat;
+				background-position: center;
+				/*opacity: 0.8;*/
+				/*background-position: center;position: absolute;
+				left: 0px;*/
+				border-right: 2px solid #262626;
+				position: relative;
+				top: 5px;
+			}
+			
+			.weixin {
+				/*border: 1px solid red;*/
+				width: 80px;
+				height: 40px;
+				/*position: absolute;
+				left: 0px;*/
+				line-height: 40px;
+				text-align: center;
+				text-indent: 10px;
+			}
+			
+			.sosuo:active {
+				background-color: #262626;
+				z-index: 1;
+			}
+			
+			.jiahao {
+				/*border: 1px solid red;*/
+				width: 50px;
+				height: 40px;
+				background: url(img/相机2.PNG);
+				background-size: 30px;
+				background-repeat: no-repeat;
+				background-position: center;
+				position: absolute;
+				right: 5px;
+			}
+			
+			.beijing {
+				height: 200px;
+				width: 100%;
+				background: url(img/建筑-03.jpg);
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			
+			.neirong {
+				width: 100%;
+				min-heigh: 200px;
+				max-height: 100%;
+				display: flex;
+				flex-flow: row nowrap;
+				border-bottom: 1px solid #8C8C8C;
+				overflow-y: scroll;
+			}
+			
+			.zuo {
+				width: 100px;
+				min-height:60px ;
+				height: 100%;
+				/*border:1px solid #8C8C8C ;*/
+				background: url(img/weixintu/小星.PNG);
+				background-repeat: no-repeat;
+				background-size: contain;
+				/*box-indent:10px;*/
+				background-position: center;
+				margin-top: 5px;
+			}
+			
+			.you {
+				width: 100%;
+				height: 100%;
+				/*border:1px solid red ;*/
+				display: flex;
+				flex-flow: column nowrap;
+			}
+			
+			.a1 {
+				height: 30px;
+				width: 100%;
+				/*border: 1px solid red;*/
+				color: #336699;
+				text-indent: 10px;
+			}
+			
+			.a2 {
+				height: 40px;
+				width: 100%;
+				/*border: 1px solid red;*/
+				font-size: 15px;
+				text-indent: 10px;
+			}
+			
+			.a3 {width: 150px;
+			height: 150px;
+				
+				background: url(img/二维码.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				/*width: 100%;*/
+				/*border: 1px solid red;*/
+			}
+			
+			.a4 {
+				height: 40px;
+				width: 100%;
+				/*border: 1px solid red;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				font-size: 12px;
+				color: #8c8c8c;
+			}
+			
+			.b1 {
+				height: 20px;
+				width: 50px;
+				/*border: 1px solid red;*/
+			}
+			
+			#s {
+				/*border: 1px solid red;*/
+				height: 20px;
+				width: 50px;
+				/*border: 1px solid red;*/
+				background: url(img/小角.PNG);
+				background-repeat: no-repeat;
+				background-size: 30px;
+				background-position: center;
+			}
+			
+			.liubai {
+				height: 30px;
+				width: 100%;
+				position: relative;
+			}
+			
+			.touxiang {
+				height: 80px;
+				width: 80px;
+				border: 2px solid #CCCCCC;
+				position: absolute;
+				top: -50px;
+				right: 30px;
+				background: url(img/周星.PNG);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			.gundong {
+				height: 100%;
+				width: 100%;
+				overflow: scroll;
+			}
+			
+			.cc {
+				height: 50px;
+				width: 100%;
+				line-height: 50px;
+				text-align: center;
+				font-size: 14px;
+				color: #8c8c8c;
+			}
+			/*样式*/
+			
+			#a10 {
+				display: none;
+				width: 200px;
+				height: 40px;
+				/*border: 1px red solid;*/
+				margin: auto;
+				flex-flow: row nowrap;
+				text-align: center;
+				line-height: 40px;
+				background-color: #262626;
+				color: whitesmoke;
+				border-radius: 3px;
+			}
+			
+			#a11 {
+				width: 100px;
+				height: 40px;
+				/*border: 1px red solid;*/
+				display: flex;
+				flex-flow: row nowrap;
+				position: relative;
+				text-align: right;
+				text-indent: 50px;
+			}
+			
+			#a12 {
+				width: 100px;
+				height: 40px;
+				/*	border: 1px red solid;*/
+				display: flex;
+				flex-flow: row nowrap;
+				position: relative;
+				text-align: right;
+				text-indent: 50px;
+			}
+			
+			#a13 {
+				width: 2px;
+				height: 29px;
+				background-color: whitesmoke;
+				position: relative;
+				top: 5px;
+			}
+			
+			#a111 {
+				width: 25px;
+				height: 25px;
+				background: url(点赞.png);
+				background-size: contain;
+				position: absolute;
+				left: 20px;
+				top: 9px;
+			}
+			
+			#a121 {
+				width: 25px;
+				height: 25px;
+				background: url(评论.png);
+				background-size: contain;
+				position: absolute;
+				left: 20px;
+				top: 9px;
+			}
+			
+			#s1 {
+				
+				/*border: 1px solid red;*/
+				background-color: #f2f2f2;
+			}
+			
+			#s2 {
+				height: 40px;
+				width: 100%;
+				border: 1px solid red;
+				position: fixed;
+				bottom: 0px;
+				display: none;
+				flex-flow: row nowrap;
+				background-color: #f2f2f2;
+				
+			}
+			
+			#s21 {
+				height: 40px;
+				/*border: 1px solid red;*/
+				width: 50px;
+				background: url(笑脸.png);
+				background-repeat: no-repeat;
+				margin-top: 4px;
+				margin-right: 5px;
+				margin-left: 4px;
+			}
+			
+			#s23 {
+				height: 40px;
+				/*border: 1px solid red;*/
+				width: 65px;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			#s22 {
+				height: 30px;
+				/*border-bottom: 1px solid #00e600;*/
+				width: 100%;
+				
+			}
+			#s221{
+				border: none;
+				height: 30px;
+				width: 90%;
+				text-align: center;
+				margin-left: 10px;
+				border-bottom: 1px solid #00e600;
+				background-color: #f2f2f2;
+			}
+			#s3 {
+				width: 100%;
+				/*border: 1px solid red;*/
+				/*display: flex;
+				flex-flow: row nowrap;*/
+				background-color: #CCCCCC;
+				line-height: 30px;
+			}
+			
+			#s31 {width: auto;
+				/*text-align-last: 100px;*/
+				border-bottom: 1px solid silver;
+				margin-left: 5px;
+			}
+			
+			#s32 {
+				text-align: center;
+			}
+			
+			::-webkit-scrollbar{display:none;}
+			display
+		</style>
+	</head>
+
+	<body>
+		<div class="di">
+			<div class="dianchi">
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+			<div class="pingmu">
+
+				<a href="微发现页.html">
+					<div class="sosuo">
+
+					</div>
+				</a>
+				<div class="weixin">朋友圈</div>
+				<div class="jiahao"></div>
+
+			</div>
+			<div>
+
+			</div>
+
+			<div class="gundong">
+				<div class="beijing"></div>
+				<div class="liubai">
+					<div class="touxiang">
+
+					</div>
+					<div class="ming">
+
+					</div>
+				</div>
+				<div class="neirong">
+					<div class="zuo"><img src=""></div>
+					<div class="you">
+						<div class="a1">Winnie</div>
+						<div class="a2">谁给个红包</div>
+						<div class="a3"></div>
+						<div class="a4">
+							<div class="b1">昨天</div>
+
+							<!---->
+
+							
+							
+							
+							<div id="a10">
+
+								<div id="a11">
+									<div id="a111">
+
+									</div>
+									<div id="a112">
+										赞
+									</div>
+
+								</div>
+								<div id="a13"></div>
+								<div id="a12">
+									<div id="a121"></div>
+									<div id="a122">评论</div>
+								</div>
+							</div>
+							<div id="s"></div>
+							
+
+							<!---->
+						</div>
+						<div id="s1"></div>
+						<div id="s3"></div>
+						
+					</div>
+				</div>
+				<div class="neirong">
+					<div class="zuo"></div>
+					<div class="you">
+						<div class="a1">Winnie</div>
+						<div class="a2">谁给个红包</div>
+						<div class="a3"></div>
+						<div class="a4">
+							<div class="b1">17:25</div>
+							<div class="b2"></div>
+
+						</div>
+					</div>
+				</div>
+				<div class="neirong">
+					<div class="zuo"></div>
+					<div class="you">
+						<div class="a1">Winnie</div>
+						<div class="a2">谁给个红包</div>
+						<div class="a3"></div>
+						<div class="a4">
+							<div class="b1">17:25</div>
+							<div class="b2"></div>
+
+						</div>
+					</div>
+				</div>
+				<div class="cc">
+					到底了
+				</div>
+
+			</div>
+
+		</div>
+		<div id="s2">
+
+			<div id="s22"><input id="s221" value="" /></div>
+			<div id="s21"></div>
+			<div id="s23">发送</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var s = document.getElementById("s")
+	s.onclick = function() {
+
+		a10.style.display = "flex"
+	}
+
+	var f = true;
+	a11.onclick = function() {
+		var s1 = $("s1");
+
+		if(f) {
+			//			var d=document.createElement("span")
+			//			d.innerText="123123"
+			//			s1.appendChild(d)
+			s1.innerHTML = "<img src='点赞蓝色.png' width='25px'>";
+			f = false;
+
+			a112.innerText = "取消"
+			a111.innerHTML = "" //"<img src='点赞红色.png' width='25px'>"
+			a10.style.display = "none";
+		} else {
+			//			s1.removeChild(s1.lastChild)
+			s1.innerHTML = "";
+			f = true
+			a112.innerText = "赞"
+			a10.style.display = "none";
+
+		}
+
+	}
+	a12.onclick = function() {
+		var s2 = $("s2");
+		
+			a10.style.display = "none"
+		s2.style.display = "flex";
+	
+	
+			
+	
+		
+
+	}
+
+	s23.onclick = function() {
+		var s23 = $("s23");
+		var s221 = $("s221")
+		s2.style.display = "none";
+		s3.innerHTML += "<div id='s31'>⁽⁽ଘ( )ଓ⁾⁾自己个儿：" + s221.value + "<input name='s32' value='删除' type='button' /></div>"
+		s221.value = ""
+		var sss = document.getElementsByName("s32")
+		for(var i = 0; i < sss.length; i++) {
+			sss[i].onclick = function() {
+				if(confirm("是否删除?")) {
+
+					this.parentNode.outerHTML = "";
+
+				} else {
+
+				}
+			}
+
+		}
+	}
+
+	function $(id) {
+		return document.getElementById(id);
+	}
+</script>

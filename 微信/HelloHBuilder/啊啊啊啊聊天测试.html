@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	作者：1143896176@qq.com
+        	时间：2017-09-08
+        	描述：为微信通话做准备
+   -->
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+				font-family: "微软雅黑";
+			}
+			
+			.di {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
+				/*position: relative;*/
+				/*justify-content:space-around;*/
+				display: flex;
+				flex-flow: column nowrap;
+				flex-flow: column nowrap;
+				justify-content: flex-end;
+				position: fixed;
+				top: 0px;
+				/*overflow: scroll;*/
+			}
+			
+			.pingmu {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 45px;
+				/*position:fixed;
+			top:40px;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				background-color: #404040;
+				color: whitesmoke;
+				font-weight: 100;
+			}
+			
+			.dianchi {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 40px;
+				/*position:fixed;
+			top:0px;*/
+				display: flex;
+				flex-flow: row nowrap;
+				background: #1a1a1a;
+				justify-content: space-between;
+			}
+			
+			.right {
+				width: 200px;
+				/*border:1px whitesmoke solid;*/
+				background: url(img/weixintu/dianchi.PNG);
+				height: 40px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.left {
+				width: 100px;
+				/*border:1px whitesmoke solid;*/
+				background: url(img/weixintu/捕.PNG);
+				height: 40px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.sosuo {
+				width: 50px;
+				height: 30px;
+				background: url(img/箭头白.PNG);
+				background-size: 30px;
+				background-repeat: no-repeat;
+				background-position: center;
+				/*opacity: 0.8;*/
+				/*background-position: center;position: absolute;
+				left: 0px;*/
+				border-right: 2px solid #262626;
+				position: relative;
+				top: 5px;
+			}
+			
+			.weixin {
+				/*border: 1px solid red;*/
+				width: 80px;
+				height: 40px;
+				/*position: absolute;
+				left: 0px;*/
+				line-height: 40px;
+				text-align: center;
+				text-indent: 10px;
+			}
+			
+			.sosuo:active {
+				background-color: #262626;
+				z-index: 1;
+			}
+			
+			.jiahao {
+				/*border: 1px solid red;*/
+				width: 50px;
+				height: 40px;
+				background: url(img/weixintu/wo.PNG);
+				background-size: 30px;
+				background-repeat: no-repeat;
+				background-position: center;
+				position: absolute;
+				right: 5px;
+			}
+			
+			#gundong {
+				height: 100%;
+				width: 100%;
+				overflow-y: scroll;
+				/*border: 1px solid #0009FF;*/
+				display: inline-block;
+			}
+			
+			.shuru {
+				background-color: #F2F2F2;
+				height: 50px;
+				width: 100%;
+				/*position: absolute;
+				bottom: 0px;*/
+				/*border: 1px solid red;*/
+				display: inline-block;
+				display: flex;
+				/*flex-flow: row nowrap;*/
+				justify-content: center;
+				justify-content: space-around;
+			}
+			
+			.yuyin {
+				background-size: 10px;
+				background-repeat: no-repeat;
+				height: 30px;
+				width: 30px;
+				border: 1px solid #8c8c8c;
+				border-radius: 50%;
+				background: url(语音.png);
+				background-size: cover;
+				margin-top: 5px;
+			}
+			
+			.shuruk {
+				height: 50px;
+				width: 50%;
+				/*border: 1px solid red;*/
+				border-bottom: 1px red solid;
+				padding-top: 10px;
+				display: flex;
+				flex-flow: row nowrap;
+				s
+			}
+			
+			#shuruz {
+				width: 150px;
+				/*border: 1px solid red;*/
+				height: 30px;
+			}
+			
+			#im {
+				height: 32px;
+				width: 32px;
+				background-repeat: no-repeat;
+				s background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				background: url(笑脸.png);
+				margin-top: 5px;
+			}
+			
+			.jh {
+				background: url(加号1.png);
+				background-size: 20px;
+				background-repeat: no-repeat;
+				background-position: center;
+				height: 30px;
+				width: 30px;
+				border-radius: 50%;
+				border: 1px solid #CCCCCC;
+				margin-top: 4px;
+			}
+			
+			#duihuak {
+				height: 30px;
+				width: 30px;
+				border: 1px solid red;
+				border-radius: 3px;
+			}
+			
+			#th {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-end;
+			}
+			
+			#th2 {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+			}
+			
+			#th img {
+				width: 30px;
+				height: 30px;
+			}
+			
+			#th2 img {
+				width: 30px;
+				height: 30px;
+			}
+			
+			#b {
+				min-height: 30px;
+				max-width: 80%;
+				background-color: #00B300;
+				text-align: left;
+				border-radius: 3px;
+				margin: 5px;
+				line-height: 30px;
+			}
+			
+			#b2 {
+				min-height: 30px;
+				max-width: 80%;
+				background-color: #EEEEEE;
+				text-align: left;
+				border-radius: 3px;
+				margin: 5px;
+				line-height: 30px;
+			}
+			
+			#a {
+				display: inline-block;
+				justify-content: flex-center;
+				max-width: 60%;
+			}
+			
+			#a2 {
+				display: inline-block;
+				justify-content: flex-center;
+				max-width: 60%;
+			}
+			
+			#input {
+				display: none
+			}
+			
+			::-webkit-scrollbar;
+			display:none;
+		</style>
+	</head>
+
+	<body>
+		<div class="di">
+			<div class="dianchi">
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+			<div class="pingmu">
+
+				<div class="sosuo">
+
+				</div>
+
+				<div class="weixin">小明</div>
+				<div class="jiahao"></div>
+
+			</div>
+
+			<div id="gundong">
+				<div id="tr">
+
+				</div>
+			</div>
+			<div class="shuru">
+				<div class="yuyin">
+					<!--<img class="i" src="img/HBuilder.png" width="30px" height="30px">-->
+				</div>
+				<div class="shuruk">
+					<div id="shuruz" contenteditable="true"></div>
+					<input type="file" id="input" />
+					<span id="but">发送</span>
+				</div>
+				<div id="im">
+
+				</div>
+
+				<div class="jh"></div>
+
+			</div>
+		</div>
+	</body>
+
+</html>
+
+<script type="text/javascript" src="jquery.js"></script>
+
+<script>
+	im.onclick = function() {
+		var s = ['img/HBuilder.png']
+		var i = document.getElementById("input")
+			//点击input
+		i.click();
+
+		i.addEventListener('change', readFile, false);
+
+		function readFile() {
+			var file = this.files[0];
+			if(!/image\/\w+/.test(file.type)) {
+				alert("请确保文件为图像类型");
+				return false;
+			}
+			var reader = new FileReader();
+			reader.readAsDataURL(file);
+
+			reader.onload = function() {
+
+				shuruz.innerHTML = "<img src=" + this.result + " width='25px';height='25px'/>"
+					//				shuruz.innerHTML = "<div id='th'><div id='b'><img src=" + this.result + " width='25px';height='25px'/></div><div id='a'><img src=" + s[0] + "></div></div>";
+
+				but.onclick = function() {
+					tr.innerHTML += "<div id='th'><div id='b'>" + shuruz.innerHTML + "</div><div id='a'><img src=" + s[0] + "></div></div>";
+					//		       tr.innerHTML += shuruz.innerHTML ;
+					shuruz.innerHTML = "";
+				}
+			}
+		}
+
+	}
+</script>

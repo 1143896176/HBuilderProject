@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+	<head><meta charset="UTF-8"><meta name="viewport" 
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {box-shadow: 0 1px 2px;
+				width: 100%;height: 100%;
+				text-align: center;
+				margin: auto;
+				border: 1px solid #F08080;
+				border-radius: 5%;
+				font-size: 20px;
+				color: #6633FF;
+				
+			}
+			input{width: 80px;
+				height: 65px;font-size: 40px;
+				background-color:#F08080
+				
+				
+			}
+			#result {
+				width: 90%;
+				height: 40px;
+				align-items: center;
+				background-color:#ADD8E6
+			}
+			#c{width: 50%;}
+		</style>
+	</head>
+
+	<body>
+		<div><hr/><input id="result" value="" />
+			<hr/>
+
+			<input name="num" type="button" value=1 />
+			<input name="num" type="button" value="2" />
+			<input name="num" type="button" value="3" />
+			<input name="num" type="button" value="4" />
+
+			<hr/>
+
+			<input name="num" type="button" value="5" />
+			<input name="num" type="button" value="6" />
+			<input name="num" type="button" value="7" />
+			<input name="num" type="button" value="8" />
+
+			<hr/>
+			<input name="num" type="button" value="9" />
+			<input name="num" type="button" value="0" />
+			<input name="num" type="button" value="." />
+			<input name="add" type="button" value="+" />
+			
+
+			<hr/>
+			
+			<input name="add" type="button" value="*" />
+			<input name="add" type="button" value="/" />
+			<input name="add" type="button" value="-" />
+			<input id="calcu" type="button" value="=" />
+			<div>亲!用一次就得刷新一次</div>
+			<input id="c" type=button value=刷新 onclick="history.go(0)">
+		</div>
+		
+		
+	</body>
+
+</html>
+<script>
+	var num1 = 0,
+		num2 = 0;
+	var type = null;
+
+	var nums = document.getElementsByName("num");
+	for(var i = 0; i < nums.length; i++) {
+		nums[i].onclick = function() {
+			if(type == null) {
+				num1 += this.value;
+				result.value=parseFloat(num1);
+			} else {
+				num2 += this.value;
+				result.value= parseFloat(num2);
+			}
+		}
+	}
+	
+	var add=document.getElementsByName("add");
+	for(var i=0;i<add.length;i++){
+		
+		add[i].onclick=function(){
+			type = this.value;
+			result.value=type;
+		}
+	}
+	var calcu=document.getElementById("calcu");
+	calcu.onclick=function(){
+		console.log(num1);console.log(num2);
+		var result = document.getElementById("result");
+		
+		num1=parseFloat(num1);
+		num2=parseFloat(num2);
+	
+		switch(type){
+			
+			case"+":
+			result.value=num1+num2;
+			break
+			case"-":
+			result.value=num1-num2;
+			break
+			case"*":
+			result.value=num1*num2;
+			break
+			case"/":
+			result.value=num1/num2;
+			break
+		}
+	}
+	var num1 = 0,
+		num2 = 0;
+	var type = null;
+</script>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#a10 {
+				display: none;
+				width: 200px;
+				height: 40px;
+				border: 1px red solid;
+				margin: auto;
+				flex-flow: row nowrap;
+				text-align: center;
+				line-height: 40px;
+				background-color: #262626;
+				color: whitesmoke;
+				border-radius: 3px;
+			}
+			
+			#a11 {
+				width: 100px;
+				height: 40px;
+				/*border: 1px red solid;*/
+				display: flex;
+				flex-flow: row nowrap;
+				position: relative;
+				text-align: right;
+				text-indent: 50px;
+			}
+			
+			#a12 {
+				width: 100px;
+				height: 40px;
+				/*	border: 1px red solid;*/
+				display: flex;
+				flex-flow: row nowrap;
+				position: relative;
+				text-align: right;
+				text-indent: 50px;
+			}
+			
+			#a13 {
+				width: 2px;
+				height: 29px;
+				background-color: whitesmoke;
+				position: relative;
+				top: 5px;
+			}
+			
+			#a111 {
+				width: 25px;
+				height: 25px;
+				background: url(点赞.png);
+				background-size: contain;
+				position: absolute;
+				left: 20px;
+				top: 9px;
+			}
+			
+			#a121 {
+				width: 25px;
+				height: 25px;
+				background: url(评论.png);
+				background-size: contain;
+				position: absolute;
+				left: 20px;
+				top: 9px;
+			}
+			
+			#s {
+				width: 30px;
+				height: 30px;
+				border: 1px solid red;
+			}
+			
+			#s1 {
+				height: 30px;
+				border: 1px solid red;
+			}
+			
+			#s2 {
+				height: 30px;
+				width: 100%;
+				border: 1px solid red;
+				position: fixed;
+				bottom: 0px;
+				display: flex;
+				flex-flow: row nowrap;
+			}
+			
+			#s21 {
+				height: 20px;
+				border: 1px solid red;
+				width: 20%;
+			}
+			
+			#s23 {
+				height: 20px;
+				border: 1px solid red;
+				width: 20%;
+				text-align: center;
+			}
+			
+			#s22 {
+				height: 20px;
+				border: 1px solid red;
+				width: 100%;
+			}
+			
+			#s3 {
+				width: 100%;
+				border: 1px solid red;
+				/*display: flex;
+				flex-flow: row nowrap;*/
+			}
+			
+			#s31 {
+				text-align-last: 100px;
+				border: 1px solid red;
+			}
+			
+			#s32 {
+				text-align: center;
+			}
+			img{
+				height: 30px;
+				width: 30px;
+			
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="s1"></div>
+		<div id="s3"></div>
+		<div id="a10">
+
+			<div id="a11">
+				<div id="a111">
+
+				</div>
+				<div id="a112">
+					赞
+				</div>
+
+			</div>
+			<div id="a13"></div>
+			<div id="a12">
+				<div id="a121"></div>
+				<div id="a122">评论</div>
+			</div>
+		</div>
+		<div id="s">
+
+		</div>
+		<div id="s2">
+
+			<div id="s22"><input id="s221" value="" /></div>
+			<div id="s21"><input id="file1" onchange="preview(this)" multiple="multiple" type="file" /></div>
+			<div id="s23">发送</div>
+			<script type="text/javascript">
+					function preview(file) {
+				
+//				alert(event.target.id)   //获取了 事件的发起者
+
+				if(file.files && file.files[0]) {
+
+					var reader = new FileReader();
+
+					reader.readAsDataURL(file.files[0]);
+					//当读取完毕时
+					reader.onload = function() {
+						//文件一旦开始读取，无论成功或失败，实例的 result 属性都会被填充
+						s221.innerHTML = '<img src="' + event.target.result + '" />';
+					}
+				}
+			}
+			</script>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var s = document.getElementById("s")
+	s.onclick = function() {
+
+		a10.style.display = "flex"
+	}
+
+	var f = true;
+	a11.onclick = function() {
+		var s1 = $("s1");
+
+		if(f) {
+			//			var d=document.createElement("span")
+			//			d.innerText="123123"
+			//			s1.appendChild(d)
+			s1.innerHTML = "<img src='点赞蓝色.png' width='25px'>";
+			f = false;
+
+			a112.innerText = "取消"
+			a111.innerHTML = "" //"<img src='点赞红色.png' width='25px'>"
+			a10.style.display = "none";
+		} else {
+			//			s1.removeChild(s1.lastChild)
+			s1.innerHTML = "";
+			f = true
+			a112.innerText = "赞"
+			a10.style.display = "none";
+
+		}
+
+	}
+	a12.onclick = function() {
+		var s2 = $("s2");
+		a10.style.display = "none"
+		s2.style.display = "flex";
+
+	}
+
+	s23.onclick = function() {
+		var s23 = $("s23");
+		var s221 = $("s221")
+		s3.innerHTML += "<div id='s31'>自己个儿：" + s221.value + "<input name='s32' value='删除' type='button' /></div>"
+		s221.value = ""
+		var sss = document.getElementsByName("s32")
+		for(var i = 0; i < sss.length; i++) {
+			sss[i].onclick = function() {
+				if(confirm("是否删除?")) {
+
+					this.parentNode.outerHTML = "";
+
+				} else {
+
+				}
+			}
+
+		}
+	}
+
+	function $(id) {
+		return document.getElementById(id);
+	}
+</script>

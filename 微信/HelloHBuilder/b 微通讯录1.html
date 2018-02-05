@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title></title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+				font-family: "微软雅黑";
+			}
+			
+			.di {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
+				/*position: relative;*/
+				/*justify-content:space-around;*/
+				display: flex;
+				flex-flow: column nowrap;
+				flex-flow: column nowrap;
+				justify-content: flex-end;
+				position: fixed;
+				top: 0px;
+			}
+			
+			.pingmu {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 40px;
+				/*position:fixed;
+			top:40px;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-end;
+				background-color: #404040;
+				color: whitesmoke;
+				font-weight: 100;
+			}
+			
+			.dianchi {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 40px;
+				/*position:fixed;
+			top:0px;*/
+				display: flex;
+				flex-flow: row nowrap;
+				background: #1a1a1a;
+				opacity: 1;
+				justify-content: space-between;
+			}
+			
+			.right {
+				width: 200px;
+				/*border:1px whitesmoke solid;*/
+				background: url(img/weixintu/dianchi.PNG);
+				height: 40px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.left {
+				width: 100px;
+				/*border:1px whitesmoke solid;*/
+				background: url(img/weixintu/捕.PNG);
+				height: 40px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.dilan {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 60px;
+				/*position:fixed;*/
+				/*bottom: 0px;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: center;
+				justify-content: space-around;
+				/*position: fixed;
+			bottom: 0px;
+			z-index: 1;*/
+			}
+			
+			.dilan a {
+				text-decoration: none;
+			}
+			
+			.weixin {
+				/*border: 1px solid red;*/
+				width: 50px;
+				height: 40px;
+				position: absolute;
+				left: 0px;
+				line-height: 40px;
+				text-align: center;
+			}
+			
+			.sosuo {
+				/*border: 1px solid red;*/
+				width: 50px;
+				height: 40px;
+				background: url(img/weixintu/sousuo.PNG);
+				background-size: 30px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.sosuo:active {
+				background-color: darkgray;
+			}
+			
+			.jiahao {
+				/*border: 1px solid red;*/
+				width: 50px;
+				height: 40px;
+				font-size: 40px;
+				line-height: 38px;
+				text-align: center;
+			}
+			/*.jiahao:active{*/
+			
+			.wei {
+				/*border: 1px solid red;*/
+				width: 50px;
+				height: 100%;
+				height: 100%;
+				background: url(img/weixintu/绿.PNG);
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 28px;
+				text-align: center;
+				line-height: 71px;
+				color: #00b300;
+				font-size: 12px;
+			}
+			
+			.tong {
+				/*border: 1px solid red;*/
+				width: 50px;
+				height: 100%;
+				background: url(img/weixintu/tongxunlu.PNG);
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 30px;
+				text-align: center;
+				line-height: 71px;
+				color: #404040;
+				font-size: 12px;
+			}
+			
+			.fa {
+				/*border: 1px solid red;*/
+				width: 50px;
+				height: 100%;
+				background: url(img/weixintu/灰发现.PNG);
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 30px;
+				text-align: center;
+				line-height: 71px;
+				color: #404040;
+				font-size: 12px;
+				/*position:relative;*/
+			}
+			
+			.wo {
+				width: 50px;
+				height: 100%;
+				background: url(img/weixintu/wo.PNG);
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 25px;
+				text-align: center;
+				line-height: 71px;
+				color: #404040;
+				font-size: 12px;
+			}
+			
+			.dazi {
+				/*border: 1px solid #0009FF;*/
+				width: 100%;
+				height: 100%;
+				background: #f2f2f2;
+				flex-grow: 1;
+				justify-content: space-around;
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: flex-center;
+				/*position:fixed;
+			top:80px;
+			bottom: 40px;
+			background:#ADD8E6;*/
+				/*flex-grow: 1;*/
+			}
+			
+			#yuandian {
+				height: 10px;
+				width: 10px;
+				background-color: red;
+				border-radius: 50%;
+				position: relative;
+				top: -70px;
+				left: 35px;
+			}
+			
+			#c1 {
+				/*border: 1px solid #0009FF;*/
+				width: 100%;
+				height: 100%;
+				background: #ffffff;
+				overflow: scroll;
+			}
+			
+			#c1 .e1 {
+				/*border-bottom: 1px solid red;*/
+				width: 100%;
+				height: 50px;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				position: relative;
+			}
+			
+			#c1 .e2 {
+				/*border: 1px solid red;*/
+				width: 100%;
+				height: 50px;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				position: relative;
+			}
+			
+			.b1 {
+				width: 10%;
+				/*border: 1px solid red;*/
+				height: 30px;
+				background: url(img/周星.PNG);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.b2 {
+				width: 200px;
+				/*border: 1px solid red;*/
+				height: 30px;
+				/*text-align: center; */
+				line-height: 20px;
+			}
+			
+			.b3 {
+				width: 10%;
+				/*border: 1px solid red;*/
+				height: 37px;
+				background: url(img/weixintu/touxiang.PNG);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.b5 {
+				height: 25px;
+				width: 50px;
+				/*border: 1px solid red;*/
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				font-size: 15px;
+				line-height: 25px;
+				color: #8c8c8c;
+			}
+			
+			.e2:active {
+				background-color: darkgrey;
+			}
+			
+			.e2 {
+				border-top: 1px solid #CCCCCC;
+				color: #404040;
+				text-indent: 10px;
+			}
+			
+			.e1:active {
+				background-color: darkgrey;
+			}
+			
+			.e1 {
+				border-top: 1px solid #CCCCCC;
+				text-indent: 10px;
+			}
+			
+			.ab1 {
+				height: 25px;
+				width: 100%;
+				/*border: 1px solid red;*/
+				line-height: 15px;
+				font-size: 12px;
+				color: #8c8c8c;
+			}
+			
+			.b4 {
+				background: url(img/porsche-normal.jpg);
+				width: 10%;
+				/*border: 1px solid red;*/
+				height: 30px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.b6 {
+				background: url(img/头像5.PNG);
+				width: 10%;
+				/*border: 1px solid red;*/
+				height: 30px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.b7 {
+				background: url(img/头像2.PNG);
+				width: 10%;
+				/*border: 1px solid red;*/
+				height: 30px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.b8 {
+				background: url(img/头像1.PNG);
+				width: 10%;
+				/*border: 1px solid red;*/
+				height: 30px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.b9 {
+				background: url(img/ttrtr.PNG);
+				width: 10%;
+				/*border: 1px solid red;*/
+				height: 30px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.b10 {
+				background: url(img/weixintu/熊猫.PNG);
+				width: 10%;
+				height: 30px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.b11 {
+				background: url(img/weixintu/订阅号.PNG);
+				width: 10%;
+				height: 30px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.b12 {
+				background: url(img/weixintu/群.PNG);
+				width: 10%;
+				height: 30px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			a{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="di">
+			<div class="dianchi">
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+			<div class="pingmu">
+				<div class="weixin">微信</div>
+				<div class="sosuo"></div>
+				<div class="jiahao">+</div>
+
+			</div>
+			<div class="dazi">
+				<!--<div id="pengyou">
+					
+					<div class="d1">
+						
+					</div>
+					<div class="d2">朋友圈
+						
+					</div>
+				</div>-->
+
+				<div id="c1">
+					<a href="a 聊天页.html">
+						<div class="e1" id="e1;.l,">
+
+							<div class="b1"></div>
+
+							<div class="b2">小明
+								<div class="ab1">没什么事儿。。。。。</div>
+							</div>
+
+							<div class="b5">07:41</div>
+						</div>
+					</a>
+
+					<div class="e2">
+						<div class="b3"></div>
+						<div class="b2">小薇
+							<div class="ab1">没什么事儿。。。。。</div>
+						</div>
+
+						<div class="b5">06:60</div>
+					</div>
+					<div class="e2">
+						<div class="b4">
+							<img=src "\img\头像2.PNG" />
+						</div>
+						<div class="b2">小薇
+							<div class="ab1">没什么事儿。。。。。</div>
+						</div>
+
+						<div class="b5">06:60</div>
+					</div>
+					<div class="e2">
+						<div class="b6"></div>
+						<div class="b2">小薇
+							<div class="ab1">没什么事儿。。。。。</div>
+						</div>
+
+						<div class="b5">06:60</div>
+					</div>
+					<div class="e2">
+						<div class="b7"></div>
+						<div class="b2">小薇
+							<div class="ab1">没什么事儿。。。。。</div>
+						</div>
+
+						<div class="b5">06:60</div>
+					</div>
+					<div class="e1">
+
+						<div class="b8"></div>
+						<div class="b2">周星星
+							<div class="ab1">没什么事儿。。。。。</div>
+						</div>
+
+						<div class="b5">07:41</div>
+					</div>
+
+					<div class="e2">
+						<div class="b9"></div>
+						<div class="b2">小薇
+							<div class="ab1">没什么事儿。。。。。</div>
+						</div>
+
+						<div class="b5">06:60</div>
+					</div>
+					<div class="e2">
+						<div class="b10"></div>
+						<div class="b2">小薇
+							<div class="ab1">没什么事儿。。。。。</div>
+						</div>
+
+						<div class="b5">06:60</div>
+					</div>
+					<div class="e2">
+						<div class="b11"></div>
+						<div class="b2">小薇
+							<div class="ab1">没什么事儿。。。。。</div>
+						</div>
+
+						<div class="b5">06:60</div>
+					</div>
+					<div class="e2">
+						<div class="b12"></div>
+						<div class="b2">小薇
+							<div class="ab1">没什么事儿。。。。。</div>
+						</div>
+
+						<div class="b5">06:60</div>
+					</div>
+				</div>
+				<!--<div class="c2">
+					
+				 </div>
+				 <div class="c3">
+					
+				 </div>
+				
+			
+			    </div>-->
+				<div class="dilan">
+					<div class="wei">微信</div>
+					<div class="tong">通讯录</div>
+					<a href="d微发现页.html#c1">
+						<div class="fa">发现
+							<div id="yuandian"></div>
+						</div>
+					</a>
+					<div class="wo">我
+
+					</div>
+
+				</div>
+
+			</div>
+
+	</body>
+
+</html>
+<!--<script type="text/javascript">
+	e1.onclick = function() {
+		//		location.href = "a 聊天页.html";
+	}
+</script>-->

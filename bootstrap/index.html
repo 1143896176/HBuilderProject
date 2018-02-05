@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title></title>
+		<style>
+			.row>div {
+				background: #777777;
+				margin: 10px;
+			}
+			
+			.container {
+				margin-left: 0;
+				width: 400px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-1">
+					<p class="text-center ">管理admin</p>
+
+				</div>
+				<div class="col-md-8">
+					其他
+				</div>
+
+			</div>
+		</div>
+		<div class="container">
+			<div class="row visible-lg-a">
+				<div class="col-md-12">.col-md-6</div>
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-6">.col-md-6</div>
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-1">.col-md-1</div>
+			</div>
+
+		</div>
+		<script src="js/jquery-3.3.1.js" type="text/javascript">
+		</script>
+		<script>
+			$(function() {
+				var window_width = $(window).width();
+				window.onresize = function() {
+
+					if(window_width < 750) {
+						$(".container .row").css({
+							transform: "translateX(-400px)",
+							transition: "0.5s"
+						});
+
+					} else {
+						$(".container .row").css({
+							transform: "translateX(0)",
+							transition: "0.5s"
+						});
+					}
+				}
+
+			});
+		</script>
+
+	</body>
+
+</html>

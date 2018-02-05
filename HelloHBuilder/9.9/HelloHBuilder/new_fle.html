@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<style>
+			
+			*{
+			margin: 0px;padding:0px;
+		}
+		.di{
+			border: 1px solid red;
+			width: 100%;
+			height:800px;
+			margin: 0 auto;
+			/*position: relative;*/
+			justify-content:space-around;
+			display: flex;
+			flex-flow: column nowrap;  
+			flex-flow:column nowrap;
+			justify-content:flex-end;
+			
+			
+			
+		}
+		.pingmu{/*border: 1px solid red;*/
+			width:100%;
+			height: 40px;
+			/*position:fixed;
+			top:40px;*/
+			display:flex;
+			flex-flow:row nowrap;
+			justify-content:flex-end;
+			background-color: #404040;
+			color:whitesmoke;
+			font-weight:100 ;
+			 
+			}
+			.dianchi{/*border: 1px solid red;*/
+			width:100%;
+			height: 40px;
+			/*position:fixed;
+			top:0px;*/display:flex;
+			flex-flow:row nowrap;
+			background:#1a1a1a;
+			opacity:1;
+			justify-content: space-between;
+			}
+			.right{
+				width:200px;
+				/*border:1px whitesmoke solid;*/
+			background: url(img/weixintu/dianchi.PNG);
+			height: 40px;
+			background-repeat: no-repeat;
+			background-position: center;
+			
+			}
+			
+			.left{
+				width:100px;
+				/*border:1px whitesmoke solid;*/
+			background:url(img/weixintu/捕.PNG);
+			
+			height: 40px;
+			background-repeat: no-repeat;
+			background-position: center;
+			
+			}
+		.dilan{/*border: 1px solid red;*/
+			width:100%;
+			height: 10%;
+			/*position:fixed;*/
+			/*bottom: 0px;*/
+			display:flex;
+			flex-flow:row nowrap;
+			justify-content:center;
+			justify-content:space-around;
+			
+			}	
+		   .weixin{/*border: 1px solid red;*/
+			width:50px;
+			height: 40px;
+			position:absolute;
+			left:0px;
+			line-height: 40px;
+			text-align:center;
+		   }
+		   .sosuo{/*border: 1px solid red;*/
+			width:50px;
+			height: 40px;
+			background:url(img/weixintu/sousuo.PNG);
+			background-size:30px;
+			background-repeat: no-repeat;
+			background-position: center;
+		   }
+		   .sosuo:active{background-color:darkgray;
+		   }
+		   
+		   .jiahao{/*border: 1px solid red;*/
+			width:50px;
+			height: 40px;
+			font-size: 40px;
+			line-height: 38px;
+			text-align:center;
+		   }
+			/*.jiahao:active{*/
+		   .wei{/*border: 1px solid red;*/
+			width:50px;
+			height: 100%;
+			height:100%;background:url(img/weixintu/we.PNG);
+			background-repeat: no-repeat;
+			background-position: center top;
+			background-size:30px;
+			text-align: center;
+				line-height: 71px;
+				color: #404040;
+				font-size: 12px;
+		   }
+			
+		   .tong{/*border: 1px solid red;*/
+			width:50px;
+			height:100%;background:url(img/weixintu/tongxunlu.PNG);
+			background-repeat: no-repeat;
+			background-position: center top;
+			background-size:30px;
+			text-align: center;
+				line-height: 71px;
+				color: #404040;
+				font-size: 12px;
+		   }	
+		   .fa{/*border: 1px solid red;*/
+			width:50px;
+			height: 100%;
+			background:url(img/faxian.PNG);
+			background-repeat: no-repeat;
+			background-position: center top;
+			background-size:30px;
+			text-align: center;
+				line-height: 71px;
+				color: #404040;
+				font-size: 12px;
+				/*position:relative;*/
+		   }
+		   .wo{
+			width:50px;
+			height: 100%;
+			background:url(img/weixintu/wo.PNG);
+			background-repeat: no-repeat;
+			background-position: center top;
+			background-size:25px;
+			text-align: center;
+				line-height: 71px;
+				color: #404040;
+				font-size: 12px;
+
+			
+			
+		   }
+		   </style>
+		
+	</head>
+	<body>
+		<div class="di">
+			<div class="dianchi">
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+			<div class="pingmu">
+				<div class="weixin">微信</div>
+				<div class="sosuo"></div>
+				<div class="jiahao" >+</div>
+			
+			</div >
+			<div class="dazi">
+				<div id="pengyou">
+					
+					<div class="d1">
+						
+					</div>
+					<div class="d2">朋友圈
+						
+					</div>
+				</div>
+				
+				 <div id="c1">
+				 	<div class="e1">
+				 		
+				 		<div class="b1"></div>
+				 		<div class="b2">扫一扫</div>
+				 	</div>
+				 	
+					<div class="e2">
+						<div class="b3"></div>
+				 		<div class="b2">摇一摇</div>
+						
+					</div>
+				 </div>
+				 <div class="c2">
+					
+				 </div>
+				 <div class="c3">
+					
+				 </div>
+				
+			
+			    </div>
+			<div class="dilan">
+				<div class="wei">微信</div>
+				<div class="tong">通讯录</div>
+				<div class="fa">发现
+				      <div  id="yuandian"></div>
+				</div>
+				<div class="wo">我
+				    
+				</div>
+				
+				
+			</div>
+			
+			
+			
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			::-webkit-scrollbar {
+				display: none;
+			}
+			
+			#gundong {
+				height: 100%;
+				width: 400px;
+				overflow-y: scroll;
+				border: 1px solid #0009FF;
+				display: inline-block;
+			}
+			
+			#th {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-end;
+			}
+			
+			#th2 {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-start;
+			}
+			
+			#th img {
+				width: 30px;
+				height: 30px;
+			}
+			#th2 img {
+				width: 30px;
+				height: 30px;
+			}
+			#b {
+				background-color: #00B300;
+				text-align: right;
+				border-radius: 3px;
+				margin: 10px;
+			}
+			
+			#b2 {
+				background-color: #00B300;
+				text-align: left;
+				border-radius: 3px;
+				margin: 10px;
+			}
+			
+			#a {
+				display: inline-block;
+				justify-content: flex-center;
+				max-width: 60%;
+			}
+			
+			#a2 {
+				display: inline-block;
+				justify-content: flex-center;
+				max-width: 60%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="gundong">
+			<div id="tr"></div>
+
+		</div><br>
+
+		<input type="text" id="shuruz" />
+		<input type="button" id="btn" value="send" />
+
+	</body>
+
+</html>
+<script type="text/javascript" src="jquery.js"></script>
+
+<script>
+	$(function() {
+
+		var key = "cf597ef659ed4fa3b46e74f39694f333";
+		var url = "http://www.tuling123.com/openapi/api";
+		var s = ['img/HBuilder.png']
+		$('#btn').click(function() {
+
+			var info = {
+				"key": key,
+				"info": $("#shuruz").val() // = content.value
+			}
+			var self = $("<div id='th'><div id='b'>" + $("#shuruz").val() + "</div><div id='a'><img src=" + s[0] + "></div></div>")
+				//			self.html($("#shuruz").val()) //   div.innerHTML = xxxx
+			$("#tr").append(self)
+			shuruz.value = ""
+			gundong.scrollTop = 99999;
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: info,
+				dataType: "json",
+				success: function(result) {
+
+					var robot = $("<div id='th2'><div id='a2'><img src=" + s[0] + "></div><div id='b2'>" + result.text + "</div></div>")
+
+					$("#tr").append(robot)
+					gundong.scrollTop = 99999;
+
+				}
+			});
+
+		})
+
+	})
+</script>

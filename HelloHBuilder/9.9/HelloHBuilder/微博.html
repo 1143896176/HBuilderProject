@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.di {
+				height: 100%;
+				width: 100%;
+				border: 1px solid red;
+				position: fixed;
+				top: 0px;
+				
+			}
+			
+			.ding {
+				height: 50px;
+				width: 100%;
+				border: 1px solid red;
+				display:flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				text-align: center;
+				line-height: 40px;
+			}
+			.xiaodi{height: 100%;
+				width: 80%;
+				/*align-items: 20px;*/
+				border: 1px solid red;
+				margin: auto;
+				display:flex;
+				flex-flow: row nowrap;
+				}
+				.zuo{height: 70%;
+				width: 120px;
+				/*border: 1px solid #0009FF;*/
+				display:flex;
+				flex-flow: column nowrap;
+				/*position:fixed;	
+				top:60px;*/
+				}
+				.a{height: 40px;
+				width: 120px;
+				/*border: 1px solid #0009FF;*/
+				text-align: center;
+				line-height: 40px;
+				/*position: absolute;
+				top:0px;*/
+					
+				}
+				.a1{height: 40px;
+				width: 120px;
+				/*border: 1px solid #0009FF;*/
+				text-align: center;
+				line-height: 40px;
+				background:#FF7F50;
+				/*position: absolute;
+				top:0px;*/
+					
+				}
+				.a:hover{background:#FF7F50;
+					
+				}
+			.you{height: 100%;
+				width: 100%;
+				/*align-items: center;*/
+				border: 1px solid #0009FF;
+				/*margin: auto;*/
+				display:flex;
+				flex-flow: row nowrap;
+				
+			}
+			.zhongjian{height: 100%;
+				width: 100%;
+				border: 1px solid red;
+				overflow: scroll;
+				display:flex;
+				flex-flow: column nowrap;
+				
+			}
+			.right{height: 100%;
+				width: 300px;
+				border: 1px solid red;
+				overflow: scroll;
+				/*display:flex;
+				flex-flow: column nowrap;*/
+				
+			}
+			.tu{height: 250px;
+				width: 100%;
+				border: 1px solid red;
+				
+			}
+			.xin{height: 150px;
+				width: 100%;
+				border: 1px solid red;
+				display:flex;
+				flex-flow: row nowrap;
+				align-content: center;
+			}
+			.b1{height: 120px;
+				width: 160px;
+				border: 1px solid red;
+				/*text-align: center;
+				line-height: 120px;*/
+				background-position:bottom;
+				
+			}
+			.b2{height: 120px;
+				width: 60%;
+				border: 1px solid red;
+				
+			}
+			.b3{height: 120px;
+				width: 200px;
+				border: 1px solid red;
+				
+			}
+			.shang{height: 350px;
+				width: 300px;
+				border: 1px solid red;
+				justify-content: space-around;
+				display:flex;
+				flex-flow: column nowrap;
+			}
+			.xia{height:100%;
+				width: 300px;
+				border: 1px solid red;
+				
+				}
+				.shang div{height:40px;
+				width: 250px;
+				border: 1px solid red;
+				justify-content: space-around;
+				display:flex;
+				flex-flow: column nowrap;
+				/*margin: auto;*/
+					
+				}
+				.d1{height:40px;
+				width: 250px;
+				border: 1px solid red;
+				background: url(img/veibo.PNG);
+				background-repeat:no-repeat ;
+				background-position: right;	
+				}
+				.d2{height:40px;
+				width: 100%;
+				border: 1px solid red;
+				
+					
+				}
+				.d3{height:40px;
+				width: 100px;
+				border: 1px solid red;
+					
+				}
+				.d4{height:40px;
+				width: 150px;
+				border: 1px solid red;
+					
+				}
+				#denglu1{
+					display: flex;
+					flex-flow:row nowrap;line-height: 40px;text-align: center;
+				
+				}
+				#denglu1.denglu11{height: 35px;border: 1px solid #00B300;
+				width: 50px;}
+				#denglu1.denglu12{height: 35px;border: 1px solid #00B300;
+				width: 50px;}
+				#denglu4{
+					display: flex;
+					flex-flow:row nowrap;line-height: 40px;text-align: center;
+				
+				}
+				#denglu4.denglu41{height: 35px;border: 1px solid #00B300;
+				width: 50px;}
+				#denglu4.denglu42{height: 35px;border: 1px solid #00B300;
+				width: 50px;}
+				.ding div:hover{
+					color: #FF0000;
+				}
+				#denglu5{line-height: 40px;text-align: center;
+				background: #FF7F50;
+					
+				}
+				#denglu3{color: #A9A9A9;
+					
+				}
+				#denglu6 a{color:#404040;text-decoration: none;
+					
+				}
+				::-webkit-scrollbar{
+					display: none;
+				}
+		</style>
+	</head>
+
+	<body>
+		<div class="di">
+			<div class="ding">
+				<div class="d1"></div>
+				<div class="d2"></div>
+				<div class="d3">首页</div>
+				<div class="d3">视频</div>
+				<div class="d3">发现</div>
+				<div class="d3">游戏</div>
+				<div class="d4">注册</div>
+				<div class="d4">登陆</div>
+				
+				
+			</div>
+			
+			<div class="xiaodi">
+				<div class="zuo">
+					<div class="a1" >热门</div>
+					<div class="a">明星</div>
+					<div class="a">头条</div>
+					<div class="a">视频</div>
+					<div class="a">新鲜事</div>
+					<div class="a">榜单</div>
+					<div class="a">搞笑</div>
+					<div class="a">社会</div>
+					<div class="a">情感</div>
+					<div class="a">时尚</div>
+					<div class="a">军事</div>
+					<div class="a">美女</div>
+					<div class="a">体育</div>
+					<div class="a">动漫</div>
+				</div>
+			
+			<div class="you">
+				<div class="zhongjian">
+					<div class="tu"></div>
+					<div class="xin">
+						<div class="b1">
+							<img src="img/微博图.PNG" />
+						</div>
+						<div class="b2"></div>
+						<div class="b3">
+							
+						</div>
+					</div>
+					<div class="xin">
+						<div class="b1">
+							<img src="img/微博图.PNG" />
+						</div>
+						<div class="b2"></div>
+						<div class="b3"></div>
+					</div>
+					<div class="xin">
+						<div class="b1">
+							<img src="img/微博图.PNG" />
+						</div>
+						<div class="b2"></div>
+						<div class="b3"></div>
+					</div>
+					<!--div></div>-->
+				</div>
+				<div class="right">
+					<div class="shang">
+						<div id="denglu1">
+							<div class="denglu11">账号登陆</div>
+							<div class="denglu12">安全登录</div>
+						</div>
+						<div id="denglu2"></div>
+						<div id="denglu3">请输入密码</div>
+						<div id="denglu4">
+							<div class="denglu41">记住我</div>
+							<div class="denglu42">忘记密码</div>
+						</div>
+						<div id="denglu5">登陆</div>
+						<div id="denglu6">还没有微博？<a href="#">立即注册</a>
+						
+						</div>
+					</div>
+					<div class="xia"></div>
+				</div>
+			</div>
+</div>
+		</div>
+
+	</body>
+
+</html>

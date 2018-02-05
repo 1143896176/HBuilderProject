@@ -1,0 +1,117 @@
+*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.warp {
+				width: 100%;
+				height: 100%;
+				background: url('../img/BG2@3x.png') no-repeat center;
+				
+				position: absolute;
+				left: 0;
+			}
+			
+			.warp ul {
+				background: #FFFFFF;
+				display: block;
+				border-radius: 5px;
+				height: 44px;
+				width: 273px;
+				border: 0px;
+				margin: 0 auto;
+				margin-top: 33%;
+				margin-bottom: 12%;
+				position: relative;
+			}
+			
+			.warp ul li {
+				height: 44px;
+				width: 273px;
+				line-height: 44px;
+				position: absolute;
+				text-align: center;
+				list-style: none;
+				display: none;
+			}
+			
+			.warp .center {
+				width: 100%;
+				height: 50%;
+				overflow: hidden;
+			}
+			
+			.warp .center>img {
+				display: block;
+				position: absolute;
+			}
+			
+			.warp .center .people {
+				
+				margin-left: 15%;
+				z-index: 1;
+			}
+			
+			.warp .redbag {
+				margin-left: 35%;
+			}
+			
+			@keyframes small {
+				from {
+					transform: scale(1);
+				}
+				to {
+					transform: scale(2.6);
+				}
+			}
+			
+			.show {
+				animation: small 0.4s infinite;
+			}
+			
+			.end {
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.2);
+				position: absolute;
+				display: none;
+			}
+			
+			.end-img {
+				margin-left: 10%;
+				margin-top: 35%;
+				width: 80%;
+				height: 50%;
+				background: url('../img/bg3.png') no-repeat center;
+				background-size: contain;
+				z-index: 2;
+			}
+			
+			.end .end-img p {
+				width: 100%;
+				display: block;
+				position: absolute;
+				height: 21px;
+				line-height: 21px;
+				font-size: 15px;
+				color: #F8E71C;
+				text-align: center;
+				padding: 10px 0;
+				font-family: PingFangSC-Regular;
+			}
+			
+			.end .end-img .name {
+				height: 28px;
+				line-height: 28px;
+				font-size: 20px;
+			}
+			
+			.end .end-img .tele {
+				text-align: center;
+			}

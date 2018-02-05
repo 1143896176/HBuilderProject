@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/WIR.css" />
+	</head>
+
+	<body>
+		<div class="warp">
+			<div class="red-bag">
+				<input type="button" />
+			</div>
+		</div>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				positionInit();
+				function positionInit(){
+					var red_bag_h = $(".red-bag").height();
+				var red_bag_w = $(".red-bag").width();
+
+				var win_w = $(window).width();
+				var win_h = $(window).height();
+
+				var left = (win_w - red_bag_w) / 2;
+				var top = win_h * 0.5;
+				/*var top=(win_h-red_bag_h)/2;*/
+				
+				$(".red-bag").css({
+					position: "absolute",
+					left: left + "px",
+					top: top + "px"
+				});
+				}
+				$(window).resize(function() {
+                     positionInit();
+				});
+
+			})
+		</script>
+	</body>
+
+</html>
